@@ -40,6 +40,7 @@
     background-color: inherit;
     margin-bottom: .75rem;
     font-weight: 500;
+    font-size: 15px;
 }
 
 .shareTitle:focus {
