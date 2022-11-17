@@ -3,8 +3,16 @@ import Rightbar from "../../components/rightbar/Rightbar"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Topbar from "../../components/topbar/Topbar"
 import Feed from "../../components/feed/Feed"
+import { Users } from "../../dummyData"
 
-export default function Profile() {
+export default function Profile({id}) {
+    let user = Users[id];
+    if (!user) {
+        return (
+            <div>How did you even get here bro</div>
+        )
+    }
+    else {
     return (
         <>
             <Topbar /> 
@@ -14,20 +22,21 @@ export default function Profile() {
                     <div className="profileRightTop">
                         <div className="profileCover">
                             <img className="profileCoverImg" src="assets/post/post3.jpeg" alt="" />
-                            <img className="profileUserImg" src="assets/person/person6.jpg" alt="" />
+                            <img className="profileUserImg" src={user.profilePicture} alt="" />
                         </div>
                     </div>
                     <div className="profileInfo">
-                        <h4 className="profileInfoName">SuperScottie66</h4>
-                        <span className="profileInfoDesc">This is my bio</span>
+                        <h4 className="profileInfoName">{user.username}</h4>
+                        <span className="profileInfoDesc">{user.userBio}</span>
                     </div>
                     <div className="profileRightBottom">
-                        <Feed profile/>
-                        <Rightbar profile/>
+                        <Feed profile id={id}/>
+                        <Rightbar profile id ={id}/>
                     </div>
                 </div>
 
             </div>
         </>
     )
+    }
 }

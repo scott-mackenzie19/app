@@ -1,5 +1,5 @@
 import "./share.css";
-import {PermMedia, Label, AccessTime, AddLocation} from '@material-ui/icons'
+import {PermMedia, AccessTime, AddLocation, DateRange} from '@material-ui/icons'
 
 export default function Share() {
   return (
@@ -11,25 +11,35 @@ export default function Share() {
                 <input placeholder="Event description" className="shareInput" />
             </div>
             <hr className="shareHr" />
-            <div className="shareBottom">
-                <div className="shareOptions">
-                    <div className="shareOption">
+            <div className="shareOption">
                         <PermMedia className="shareIcon"/>
                         <span className="shareOptionText">Photo</span>
+                        <select className="optionInput" >
+                            <option >/assets/post/post1.jpg</option>
+                            <option>/assets/post/post2.jpg</option>
+                            <option>/assets/post/post3.jpeg</option>
+                            <option>/assets/post/post4.jpg</option>
+                            <option>/assets/post/post5.jpeg</option>
+                            <option>/assets/post/post6.webp</option>
+                            <option>/assets/post/post7.jpg</option>
+                        </select>
                     </div>
                     <div className="shareOption">
-                        <Label className="shareIcon"/>
-                        <span className="shareOptionText">Label</span>
+                        <DateRange className="shareIcon"/>
+                        <span className="shareOptionText">Date</span>
+                        <input placeholder="Date" className="shareInput" />
                     </div>
                     <div className="shareOption">
                         <AccessTime className="shareIcon"/>
                         <span className="shareOptionText">Time</span>
+                        <input placeholder="Time" className="shareInput" />
                     </div>
                     <div className="shareOption">
                         <AddLocation className="shareIcon"/>
                         <span className="shareOptionText">Location</span>
+                        <input placeholder="Location" className="shareInput" />
                     </div>
-                </div>
+            <div className="shareBottom">
                 <button className="shareButton">Share</button>
             </div>
             

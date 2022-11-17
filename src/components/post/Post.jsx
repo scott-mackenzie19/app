@@ -3,7 +3,7 @@ import { MoreVert, AddLocation, AccessTime } from "@material-ui/icons"
 import {Users} from "../../dummyData";
 import {useState} from "react";
 
-export default function Post({post}) {
+export default function Post({post, id}) {
     const [like,setLike] = useState(post.like) 
     const [isLiked,setIsLiked] = useState(false);
 

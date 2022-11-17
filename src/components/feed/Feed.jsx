@@ -1,29 +1,43 @@
 import Post from "../post/Post"
 import Share from "../share/Share"
 import "./feed.css"
-import {Posts} from "../../dummyData";
+import {HomePosts, Users} from "../../dummyData";
 
-const ProfileFeed =()=> {
+const ProfileFeed =({id})=> {
+  let UserPosts = Users[id].UserPosts
+  let user = Users[id].username
+  if (UserPosts) {
+
   return (
     <div className="feed">
         <div className="feedWrapper">
             
-            {Posts.map(p=>(
-              <Post key ={p.id} post={p}/>
+            {UserPosts.map(p=>(
+              <Post id ={user} key ={p.id} post={p}/>
             ))}
         </div>
     </div>
   )
+        }
+        else {
+          return (
+            <div className="feed">
+        <div className="feedWrapper">
+            
+            <div>This user has no posts.</div>
+        </div>
+    </div>
+          )
+        }
 }
 
-export default function Feed({profile}) {
+export default function Feed({profile, id}) {
   if (!profile) {
   return (
     <div className="feed">
         <div className="feedWrapper">
-            <Share/>
-            
-            {Posts.map(p=>(
+            <Share/>            
+            {HomePosts.map(p=>(
               <Post key ={p.id} post={p}/>
             ))}
         </div>
@@ -32,7 +46,7 @@ export default function Feed({profile}) {
             }
   else {
     return (
-      <ProfileFeed/>
+      <ProfileFeed id={id}/>
     )
   }
 }

@@ -10,6 +10,7 @@
     -webkit-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.73);
     -moz-box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.73);
     border-radius: 15px;
+    max-width: 20%;
 }
 .rightbarWrapper {
     padding: 20px;
