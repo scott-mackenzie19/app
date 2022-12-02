@@ -2,7 +2,12 @@ import "./sidebar.css"
 import { RssFeed, Chat, Group, Event } from "@material-ui/icons"
 import {  MyFriends } from "../../dummyData"
 import CloseFriend from "../closeFriend/CloseFriend"
-
+function handleClick2() {
+    window.location.replace("http://localhost:3000/feed/profile/3");
+  }
+  function handleClick() {
+    window.location.replace("http://localhost:3000/feed/profile/0");
+  }
 export default function Sidebar() {
   return (
     <div className="sidebar">
@@ -10,26 +15,18 @@ export default function Sidebar() {
             <ul className="sidebarList">
                 <li className="sidebarListItem">
                     <RssFeed className ="sidebarIcon" />
-                    <span className="sidebarListItemText">Feed</span>
+                    <span onClick={handleClick2} className="sidebarListItemText">Feed</span>
                 </li>
-                <li className="sidebarListItem">
-                    <Chat className ="sidebarIcon" />
-                    <span className="sidebarListItemText">Chats</span>
-                </li>
-                <li className="sidebarListItem">
-                    <Group className ="sidebarIcon" />
-                    <span className="sidebarListItemText">Groups</span>
-                </li>
+                
                 <li className="sidebarListItem">
                     <Event className ="sidebarIcon" />
-                    <span className="sidebarListItemText">Events</span>
+                    <span onClick={handleClick2} className="sidebarListItemText">Events</span>
                 </li>
             </ul>
-            <button className="sidebarButton">Show more</button>
             <hr className="sidebarHr" />
             <ul className="sidebarFriendList">
                 {MyFriends.map(u=> (
-                    <CloseFriend key={u.id} user={u}/>
+                    <CloseFriend onClick={handleClick} key={u.id} user={u}/>
                 ))}
                 
             </ul>

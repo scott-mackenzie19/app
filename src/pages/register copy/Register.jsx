@@ -1,9 +1,4 @@
 import "./register.css"
-import {useHistory} from "react-router-dom";
-
-function handleClick() {
-    window.location = "/"
-}
 
 export default function Register() {
   return (
@@ -24,9 +19,9 @@ export default function Register() {
             <input placeholder="City" className="loginInput" />
             <input placeholder="Password" className="loginInput" />
             <input placeholder="Password Again" className="loginInput" />
-            <button className="loginButton" onClick={handleClick}>Sign Up</button>
+            <button className="loginButton">Sign Up</button>
             <div className="or">or</div>
-            <button onClick={handleClick} className="loginRegisterButton">Log into Account</button>
+            <button className="loginRegisterButton">Log into Account</button>
           </div>
         </div>
       </div>

@@ -1,11 +1,17 @@
 import "./topbar.css"
 import {Search, Person, Chat, Notifications} from "@material-ui/icons"
+function handleClick() {
+  window.location = "/feed"
+}
+function handleClick2() {
+  window.location.replace("http://localhost:3000/feed/profile/3");
+}
 
 export default function topBar() {
   return (
     <div className ="topbarContainer">
         <div className ="topbarLeft">
-            <span className="logo">Event Social</span>
+            <span onClick={handleClick} className="logo">Event Social</span>
         </div>
         <div className ="topbarCenter">
             <div className="searchbar">
@@ -16,12 +22,11 @@ export default function topBar() {
             </div>
         <div className ="topbarRight">
           <div className="topbarLinks">
-                <span className="topbarLink">Homepage</span>
-                <span className="topbarLink">Discover</span>
+                <span onClick={handleClick} className="topbarLink">Homepage</span>
           </div>
           <div className="topbarIcons">
               <div className="topbarIconItem">
-                <Person />
+                <Person onClick={handleClick2}/>
                 <span className="topbarIconBadge"> 1</span>
               </div>
               <div className="topbarIconItem">
@@ -33,7 +38,9 @@ export default function topBar() {
                 <span className="topbarIconBadge"> 1</span>
               </div>
           </div>
-          <img src="./assets/person/person1.jfif" alt="" className="topbarImg" />
+          <span onClick={handleClick2}>
+          <img src="./assets/person/person4.jpg" alt="" className="topbarImg" />
+          </span>
         </div>
     </div>
   );

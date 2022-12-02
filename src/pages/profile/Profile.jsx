@@ -6,6 +6,7 @@ import Feed from "../../components/feed/Feed"
 import { Users } from "../../dummyData"
 
 export default function Profile({id}) {
+    id = 3;
     let user = Users[id];
     if (!user) {
         return (

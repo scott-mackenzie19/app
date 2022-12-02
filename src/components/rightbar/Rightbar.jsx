@@ -4,13 +4,19 @@ import FriendList from "../friendList/FriendList.jsx"
 import { Users } from "../../dummyData"
 
 
+function handleClick2() {
+  window.location.replace("http://localhost:3000/feed/profile/3");
+}
 
+function handleClick() {
+  window.location.replace("http://localhost:3000/register")
+}
 export default function Rightbar({ profile, id }) {
-
+  if (!profile) {}
   const HomeRightbar = () => {
     return (
       <div className="settingsContainer">
-        <Settings className="settingsIcon" />
+        <Settings onClick={handleClick2} className="settingsIcon" />
         <div className="settingText">Settings</div>
       </div>
 
@@ -18,12 +24,13 @@ export default function Rightbar({ profile, id }) {
   }
 
   const ProfileRightBar = () => {
-    let user = Users[id]
+    id = 3;
+     let user = Users[id]
     let UserFriends = Users[id].UserFriends
     if (UserFriends) {
     return (
       <>
-        <h4 className="rightbarTitle">User Information</h4>
+        <h4 onClick={handleClick} className="rightbarTitle">User Information</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Zipcode:</span>
@@ -70,7 +77,7 @@ export default function Rightbar({ profile, id }) {
             )
           }
   }
-  if (profile) {
+  if (window.location.toString) {
     return (
       <div className="rightbar">
         <div className="rightbarWrapper">

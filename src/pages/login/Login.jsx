@@ -1,5 +1,13 @@
 import "./login.css"
 
+function handleClick() {
+  window.location = "/feed"
+}
+
+function handleClick2() {
+  window.location = "/register"
+}
+
 export default function Login() {
   return (
     <div className='login'>
@@ -14,9 +22,8 @@ export default function Login() {
           <div className="loginBox">
             <input placeholder="Username" className="loginInput" />
             <input placeholder="Password" className="loginInput" />
-            <button className="loginButton">Log In</button>
-            <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">Create a New Account</button>
+            <button onClick={handleClick} className="loginButton">Log In</button>
+            <button onClick={handleClick2} className="loginRegisterButton">Create a New Account</button>
           </div>
         </div>
       </div>
